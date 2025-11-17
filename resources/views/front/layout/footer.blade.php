@@ -82,7 +82,7 @@
         <div class="container">
             <div class="text-center">
                 <small style="color: #6B7280;">
-                    &copy; {{ date('Y') }} VPdA Marketing Agency. All rights reserved.
+                    &copy; {{ date('Y') }} VPPA Marketing Agency. All rights reserved.
                 </small>
             </div>
         </div>

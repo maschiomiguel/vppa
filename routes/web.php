@@ -37,3 +37,7 @@ Route::match(['get', 'post'], '/panel/password/recover-password/{id}', [Controll
 Route::get('/storage', function () {
     Artisan::call("storage:link");
 });
+
+Route::get('/key-generate', function () {
+    Artisan::call("key:generate");
+});

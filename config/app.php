@@ -16,10 +16,10 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'VPDA Marketing Agency'), // nome que deve aparecer no site
-    'simplified_name' => env('APP_NAME', 'VPDA Marketing Agency'), // nome simplificado usado no processar texto do VariablesService
-    'fantasy_name' => env('APP_FANTASY_NAME', 'VPDA Marketing Agency'), // nome fantasia usado no processar texto do VariablesService
-    'corporate_reason' => env('APP_CORPORATE_REASON', 'VPDA Marketing Agency'), // razão social usada no processar texto do VariablesService
+    'name' => env('APP_NAME', 'VPPA Marketing Agency'), // nome que deve aparecer no site
+    'simplified_name' => env('APP_NAME', 'VPPA Marketing Agency'), // nome simplificado usado no processar texto do VariablesService
+    'fantasy_name' => env('APP_FANTASY_NAME', 'VPPA Marketing Agency'), // nome fantasia usado no processar texto do VariablesService
+    'corporate_reason' => env('APP_CORPORATE_REASON', 'VPPA Marketing Agency'), // razão social usada no processar texto do VariablesService
 
     /*
     |--------------------------------------------------------------------------
