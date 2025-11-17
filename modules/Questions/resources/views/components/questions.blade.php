@@ -1,32 +1,34 @@
-<section class="faq-section" id="faq-section">
-    <div class="faq-container">
-        <!-- FAQ Header -->
-        <div class="faq-header">
-            <h1 class="faq-title">Frequently Asked Questions</h1>
-            <p class="faq-subtitle">Everything you need to know about our social media management services</p>
-        </div>
-        <!-- FAQ Accordion -->
-        <div class="faq-accordion">
-            @foreach ($questions as $question)
-                <div class="faq-item">
-                    <button class="faq-question" type="button" data-faq-toggle>
-                        <span class="faq-question-text">{{ $question->question }}</span>
-                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </button>
-                    <div class="faq-answer" data-faq-content>
-                        <div class="faq-answer-inner">
-                            {!! $question->answer !!}
+@if (count($questions) > 0)
+    <section class="faq-section" id="faq-section">
+        <div class="faq-container">
+            <!-- FAQ Header -->
+            <div class="faq-header">
+                <h1 class="faq-title">Frequently Asked Questions</h1>
+                <p class="faq-subtitle">Everything you need to know about our social media management services</p>
+            </div>
+            <!-- FAQ Accordion -->
+            <div class="faq-accordion">
+                @foreach ($questions as $question)
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" data-faq-toggle>
+                            <span class="faq-question-text">{{ $question->question }}</span>
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer" data-faq-content>
+                            <div class="faq-answer-inner">
+                                {!! $question->answer !!}
+                            </div>
                         </div>
                     </div>
-                </div>
-            @endforeach
+                @endforeach
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+@endif
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const faqItems = document.querySelectorAll('[data-faq-toggle]');
