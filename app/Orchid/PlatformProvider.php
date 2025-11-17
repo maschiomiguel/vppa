@@ -35,19 +35,22 @@ class PlatformProvider extends OrchidServiceProvider
                 ->icon('menu')
                 ->route('platform.pageshome.edit'),
 
-            Menu::make('Depoimentos')
-                ->route('platform.testimonials.list')
-                ->permission('platform.testimonials.list'),
+            // Menu::make('Depoimentos')
+            //     ->route('platform.testimonials.list')
+            //     ->permission('platform.testimonials.list'),
 
             Menu::make('Diferenciais')
+                ->icon('layers')
                 ->route('platform.differentials.list')
                 ->permission('platform.differentials.list'),
 
             Menu::make('Posts do Instagram')
+                ->icon('picture')
                 ->route('platform.galleries.list')
                 ->permission('platform.galleries.list'),
 
             Menu::make('Reels do Instagram')
+                ->icon('film')
                 ->route('platform.videos.list')
                 ->permission('platform.videos.list'),
 
@@ -57,6 +60,7 @@ class PlatformProvider extends OrchidServiceProvider
                 ->permission('platform.questions.list'),
 
             Menu::make('Contato')
+                ->icon('phone')
                 ->route('platform.pagescontact.edit')
                 ->permission('platform.pagescontact.edit'),
 

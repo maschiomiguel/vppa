@@ -108,7 +108,7 @@ class VideoEditScreen extends ModulesScreen
                         ->multiple(false)
                         ->set('data-upload-compress', "1")
                         ->title("Imagens")
-                        ->help('Proporção recomendada: 4:5. Tamanho máximo: 2MB')
+                        ->help('Proporção recomendada: 6:9. Tamanho máximo recomendado: 15mb')
                         ->targetId()
                         ->canSee($locale === 'pt-BR'),
                 ]),

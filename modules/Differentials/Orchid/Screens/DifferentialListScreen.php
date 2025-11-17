@@ -59,8 +59,8 @@ class DifferentialListScreen extends ModulesScreen
                 TD::make()->sortable('differentials'),
                 TD::make("name", "Nome"),
                 TD::make("active", "Ativo")->toggleActive('differentials'),
-                TD::make("active_section", "Ativo na seção geral")->toggleActiveSection('differentials')
-                ->width('150px'),
+                // TD::make("active_section", "Ativo na seção geral")->toggleActiveSection('differentials')
+                // ->width('150px'),
                 TD::make(__('Actions'))
                     ->align(TD::ALIGN_CENTER)
                     ->width('100px')
