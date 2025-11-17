@@ -68,6 +68,17 @@ class PageHomeEditScreen extends ModulesScreen
             $locale = $language->locale;
 
             $fields = [   
+
+                Layout::rows([
+                    Input::make("model.$locale.call_link")
+                        ->type('text')
+                        ->title('Link do vídeo da seção hero')
+                        ->value($this->model->translate($locale)?->call_link)
+                        ->placeholder('Link do vídeo da seção hero')
+                        ->help('O link deve ser do embeddable, como do YouTube ou Vimeo. Ex.: https://www.youtube.com/embed/dQw4w9WgXcQ'),
+
+                ])->title('Hero Section'),
+
                 Layout::rows([
 
                     TextArea::make("model.$locale.title_1")
@@ -93,85 +104,6 @@ class PageHomeEditScreen extends ModulesScreen
                         ->maxRows(3),
 
                 ])->title("Números"),
-
-                Layout::rows([
-                    TextArea::make("model.$locale.title_3")
-                        ->type('text')
-                        ->title("Título")
-                        ->value($this->model->translate($locale)?->title_3),
-
-                    TinyMCE::make("model.$locale.text_4")
-                        ->title("Texto")
-                        ->value($this->model->translate($locale)?->text_4),
-
-                    Input::make("model.$locale.text_6")
-                        ->type('text')
-                        ->title("Texto do botão CTA")
-                        ->value($this->model->translate($locale)?->text_6),
-
-                    Input::make("model.$locale.call_link_2")
-                        ->type('text')
-                        ->title("Link download iOS (App Store)")
-                        ->value($this->model->translate($locale)?->call_link_2),
-
-                    Input::make("model.$locale.call_link_3")
-                        ->type('text')
-                        ->title("Link download Android (Google Play)")
-                        ->value($this->model->translate($locale)?->call_link_3),
-
-                    Upload::make('model.attachment')
-                        ->groups("image_cta_app_section")
-                        ->multiple(false)
-                        ->title("Imagem")
-                        ->set('data-upload-compress', "1")
-                        ->maxFileSize(2)
-                        ->targetId()
-                        ->help('Proporção recomendada: 1:1. Tamanho máximo: 2MB'),
-                ])->title("CTA aplicativo"),
-
-                Layout::rows([
-
-                    TextArea::make("model.$locale.title_2")
-                        ->type('text')
-                        ->title("Título")
-                        ->value($this->model->translate($locale)?->title_2)
-                        ->height(75),
-
-                    TextArea::make("model.$locale.text_5")
-                        ->type('text')
-                        ->title("Texto")
-                        ->value($this->model->translate($locale)?->text_5),
-
-                    Input::make("model.$locale.call_text_1")
-                        ->type('text')
-                        ->title("Texto do botão CTA")
-                        ->value($this->model->translate($locale)?->call_text_1),
-
-                    // Input::make("model.$locale.call_link_1")
-                    //     ->type('text')
-                    //     ->title("Link do botão CTA")
-                    //     ->value($this->model->translate($locale)?->call_link_1)
-                    //     ->help('Se vazio, irá direcionar ao whatsapp cadastrado na aba "Contato"'),
-                ])->title("Depoimentos"),
-
-                Layout::rows([
-
-                    Input::make("model.$locale.title_4")
-                        ->type('text')
-                        ->title("Título do formulário de contato")
-                        ->value($this->model->translate($locale)?->title_4)
-                        ->help('Para destacar uma parte do texto, use *asteriscos* ao redor do texto. Exemplo: "'),
-
-                    Upload::make('model.attachment')
-                        ->groups("bg_form_section")
-                        ->multiple(false)
-                        ->title("Background da seção")
-                        ->set('data-upload-compress', "1")
-                        ->maxFileSize(2)
-                        ->targetId()
-                        ->help('Proporção recomendada: 4:1. Tamanho máximo: 2MB'),
-
-                ])->title("Formulário de contato"),
 
                 Layout::rows([
                     TextArea::make("model.$locale.keywords")

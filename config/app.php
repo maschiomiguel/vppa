@@ -23,17 +23,6 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | CNPJ
-    |--------------------------------------------------------------------------
-    |
-    | Website CNPJ
-    |
-    */
-
-    'cnpj' => env('APP_CNPJ', '13.161.932/0001-68'), // cnpj usada no processar texto do VariablesService, também pode aparecer no site
-
-    /*
-    |--------------------------------------------------------------------------
     | Application Logo
     |--------------------------------------------------------------------------
     |
@@ -261,6 +250,7 @@ return [
         Modules\Galleries\GalleriesServiceProvider::class,
         Modules\Links\LinksServiceProvider::class,
         Modules\Videos\VideosServiceProvider::class,
+        Modules\Questions\QuestionsServiceProvider::class,
     ],
 
     /*

@@ -51,6 +51,11 @@ class PlatformProvider extends OrchidServiceProvider
                 ->route('platform.videos.list')
                 ->permission('platform.videos.list'),
 
+            Menu::make('FAQ')
+                ->icon('question')
+                ->route('platform.questions.list')
+                ->permission('platform.questions.list'),
+
             Menu::make('Contato')
                 ->route('platform.pagescontact.edit')
                 ->permission('platform.pagescontact.edit'),

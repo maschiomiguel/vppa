@@ -48,53 +48,6 @@
 
     <x-custom-code type="body" />
 
-    <header
-            class="header w-100 isolation-isolate position-{{ app(\App\Services\SiteService::class)->isMenuActive('home') ? 'absolute' : '' }} top-0 start-0 w-100 py-2 py-lg-0">
-        <div class="container">
-            <div
-                 class="d-flex flex-row {{ app(\App\Services\SiteService::class)->isMenuActive('home') ? 'align-items-center' : 'justify-content-center py-1 py-lg-2' }}">
-                <div class="col-auto">
-                    <a class="d-flex header-logo top-lg-3 position-relative" href="{{ route_lang('home') }}" title="Página principal">
-                        <img class="w-100 h-100 object-fit-contain" style="max-width: 159px"
-                             src="{{ app(\App\Services\SiteService::class)->getSiteLogo() }}"
-                             alt="Logo {{ config('app.name') }}" title="Logo {{ config('app.name') }}">
-                    </a>
-                </div>
-
-                @if (app(\App\Services\SiteService::class)->isMenuActive('home'))
-                    <div class="col-auto ms-auto">
-
-                        {{-- Botão mobile --}}
-                        <button class="d-lg-none btn p-0" type="button" data-bs-toggle="offcanvas"
-                                data-bs-target="#offcanvasHeader" aria-controls="offcanvasHeader">
-                            <x-icons.menu-bars class="menu-bars text-white" />
-                        </button>
-
-                        <div class="offcanvas-lg offcanvas-start" tabindex="-1" id="offcanvasHeader"
-                             aria-labelledby="offcanvasHeaderLabel">
-                            <div class="offcanvas-header d-flex justify-content-center position-relative">
-                                <a class="d-flex d-lg-none header-logo" title="Página principal">
-                                    <img class="w-100 h-100 object-fit-contain"
-                                         src="{{ app(\App\Services\SiteService::class)->getSiteLogo() }}"
-                                         alt="Logo {{ config('app.name') }}" title="Logo {{ config('app.name') }}">
-                                </a>
-                                <button type="button"
-                                        class="btn-close btn-close-white position-absolute absolute-offcanvas-btn"
-                                        data-bs-dismiss="offcanvas" data-bs-target="#offcanvasHeader"
-                                        aria-label="Close"></button>
-                            </div>
-                            <div class="offcanvas-body">
-                                <div class="">
-                                    <x-site-menu />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                @endif
-            </div>
-        </div>
-    </header>
-
     @if (!app(\App\Services\SiteService::class)->isMenuActive('home'))
         <x-breadcrumbs />
     @endif
