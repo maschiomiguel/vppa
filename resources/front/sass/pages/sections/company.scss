@@ -35,7 +35,10 @@
                 .number-suffix {
                     font-size: 3.5rem;
                     font-weight: 700;
-                    color: $primary;
+                    background: linear-gradient(180deg, $primary 0%, $secondary 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
                     line-height: 1;
 
                     @include media-breakpoint-up(lg) {

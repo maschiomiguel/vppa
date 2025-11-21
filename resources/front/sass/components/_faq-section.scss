@@ -42,9 +42,11 @@
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
+    border: 2px solid #E5E7EB !important;
 
     &:hover {
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        border: solid 2px rgba($primary, 0.3) !important;
     }
 
     &.active {

@@ -5,13 +5,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 mx-auto text-center mb-2">
-                    <h2 class="advantages-title fw-bold mb-3">Why Choose <span class="text-gradient-vertical">Instagram</span></h2>
+                    <h2 class="advantages-title fw-bold mb-3 animate-on-scroll" data-animation="fade-up">Why Choose <span class="text-gradient-vertical">Instagram</span></h2>
                 </div>
             </div>
             <div class="row g-4 justify-content-center">
                 @foreach ($advantages as $index => $advantage)
-                    <div class="col-lg-4 col-md-6">
-                        <div class="advantage-card card h-100 border-0 shadow-sm" style="background-color: {{ $advantage->color_code ? $advantage->color_code . 'CC' : 'rgba(227, 242, 253, 0.8)' }};">
+                    <div class="col-xl-5 col-xxl-4 col-md-6">
+                        <div class="advantage-card card h-100 border-0 shadow-sm animate-on-scroll" data-animation="fade-up" data-delay="{{ ($index + 1) * 100 }}" style="background-color: {{ $advantage->color_code ? $advantage->color_code . 'CC' : 'rgba(227, 242, 253, 0.8)' }};">
                             <div class="card-body p-4">
                                 @if ($advantage->image->count())
                                     @php
@@ -44,7 +44,7 @@
             </div>
             <div class="row mt-5">
                 <div class="col-12 text-center">
-                    <a href="#contact" class="advantage-cta-btn btn btn-primary btn-lg px-5 py-3 rounded-pill shadow">
+                    <a href="#contact" class="advantage-cta-btn btn btn-primary btn-lg px-5 py-3 rounded-pill shadow animate-on-scroll" data-animation="fade-up" data-delay="400">
                         Book a Call 
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="advantage-cta-arrow">
                             <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -54,4 +54,31 @@
             </div>
         </div>
     </section>
+
+    @push('js')
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const animateElements = document.querySelectorAll('.advantages-section .animate-on-scroll');
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const delay = entry.target.dataset.delay || 0;
+                            setTimeout(() => {
+                                entry.target.classList.add('animated');
+                            }, delay);
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -50px 0px'
+                });
+
+                animateElements.forEach(element => {
+                    observer.observe(element);
+                });
+            });
+        </script>
+    @endpush
 @endif

@@ -7,11 +7,11 @@
     <div class="container">
         <div class="row justify-content-center text-center">
             <div class="col-12 col-lg-10 col-xl-8">
-                <h2 class="cta-title text-white mb-3">
+                <h2 class="cta-title text-white mb-3 animate-on-scroll" data-animation="fade-up">
                     Ready to Transform Your Instagram?
                 </h2>
 
-                <p class="cta-subtitle text-white mb-4">
+                <p class="cta-subtitle text-white mb-4 animate-on-scroll" data-animation="fade-up" data-delay="100">
                     Let's create content that captivates your audience and drives real business results.
                 </p>
 
@@ -20,7 +20,7 @@
                 @endphp
 
                 <div
-                    class="cta-features d-flex flex-column flex-sm-row justify-content-center align-items-center gap-4 mb-3">
+                    class="cta-features d-flex flex-column flex-sm-row justify-content-center align-items-center gap-4 mb-3 animate-on-scroll" data-animation="fade-up" data-delay="200">
                     @foreach ($items as $item)
                         <div class="cta-feature d-flex align-items-center gap-1">
                             <svg width="8" height="8" viewBox="0 0 8 8" fill="none"
@@ -33,7 +33,7 @@
                 </div>
 
                 <div class="d-flex justify-content-center mb-3">
-                    <a href="#" class="btn btn-cta-primary btn-cta-large">
+                    <a href="#" class="btn btn-cta-primary btn-cta-large btn-cta-animated animate-on-scroll" data-animation="fade-up" data-delay="300">
                         Book a call
                         <svg width="40" height="40" viewBox="0 0 24 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg" class="ms-1">
@@ -54,7 +54,7 @@
                     // $linkedinUsername = $contact->getSocial('linkedin_username');
                 @endphp
 
-                <div class="cta-socials d-flex flex-wrap justify-content-center align-items-center gap-1">
+                <div class="cta-socials d-flex flex-wrap justify-content-center align-items-center gap-1 animate-on-scroll" data-animation="fade-up" data-delay="400">
                     @if ($instagram)
                         <a href="{{ $instagram }}" target="_blank" rel="noopener noreferrer" class="cta-social-link cta-social-icon-only" aria-label="Instagram">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
@@ -99,7 +99,7 @@
         </div>
     </div>
 
-    <div class="cta-footer-wrapper mt-2 pt-2">
+    <div class="cta-footer-wrapper mt-2 pt-2 animate-on-scroll" data-animation="fade-up" data-delay="500">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-12 col-md-4 text-center text-md-start mb-4 mb-md-0">
@@ -115,3 +115,30 @@
     </div>
     
 </section>
+
+@push('js')
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const animateElements = document.querySelectorAll('.cta-section .animate-on-scroll');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const delay = entry.target.dataset.delay || 0;
+                        setTimeout(() => {
+                            entry.target.classList.add('animated');
+                        }, delay);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            animateElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+@endpush
