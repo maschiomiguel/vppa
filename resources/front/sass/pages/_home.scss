@@ -17,6 +17,10 @@ body main {
     overflow-x: hidden;
 }
 
+.page-sections-wrapper {
+    background: linear-gradient(0deg, #D9D9D9, white);
+}
+
 @import "sections/banners";
 @import "sections/company";
 @import "sections/differentials";

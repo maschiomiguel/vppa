@@ -1,6 +1,6 @@
 @inject('site', 'App\\Services\\SiteService')
 
-<section class="bg-light py-lg-2 py-1">
+<section class="py-lg-2 py-1">
     <div class="container">
         <nav aria-label="breadcrumb" class="d-flex flex-column flex-sm-row gap-0-50 align-items-center justify-content-between">
             @if ($site->getBreadTitle())

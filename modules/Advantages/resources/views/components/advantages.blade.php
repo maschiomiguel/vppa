@@ -1,18 +1,18 @@
 @props(['page'])
 
 @if ($advantages->count())
-    <section class="advantages-section mt-0 py-lg-6 py-5 bg-light">
+    <section class="advantages-section mt-0 py-3">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 mx-auto text-center mb-2">
-                    <h2 class="advantages-title fw-bold mb-3">Why Choose Instagram</h2>
+                    <h2 class="advantages-title fw-bold mb-3">Why Choose <span class="text-gradient-vertical">Instagram</span></h2>
                 </div>
             </div>
             <div class="row g-4 justify-content-center">
                 @foreach ($advantages as $index => $advantage)
                     <div class="col-lg-4 col-md-6">
                         <div class="advantage-card card h-100 border-0 shadow-sm" style="background-color: {{ $advantage->color_code ? $advantage->color_code . 'CC' : 'rgba(227, 242, 253, 0.8)' }};">
-                            <div class="card-body p-2">
+                            <div class="card-body p-4">
                                 @if ($advantage->image->count())
                                     @php
                                         $media = $advantage->image->first();

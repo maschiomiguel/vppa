@@ -16,11 +16,11 @@
             <div class="swiper-wrapper">
                 @foreach ($testimonials as $testimonial)
                     <div class="swiper-slide h-auto">
-                        <div class="testimony-card h-100 text-center bg-secondary justify-content-between">
+                        <div class="testimony-card h-100 text-center justify-content-between">
                             {{-- @if ($testimonial->image->count()) --}}
                                 <div class="col-3 col-lg-4 col-xl-3 col-xxl-2 picture">
                                     <div class="ratio ratio-1x1 max-w-icon">
-                                        <img class="object-fit-contain bg-primary rounded-circle p-0-50" alt="Foto de perfil de {{ $testimonial->text_1 }}" title="Foto de perfil de {{ $testimonial->text_1 }}" src="front\images\icons\quote.png">
+                                        <img class="object-fit-contain rounded-circle p-0-50" alt="Foto de perfil de {{ $testimonial->text_1 }}" title="Foto de perfil de {{ $testimonial->text_1 }}" src="front\images\icons\quote.png">
                                     </div>
                                 </div>
                             {{-- @endif --}}

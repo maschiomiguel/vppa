@@ -1,7 +1,7 @@
 @props(['name' => 'about', 'page' => null])
 
 @if ($page->title || $page->text || $page->images->count())
-    <section id="{{ $name }}" class="{{ $name }}-section py-2 py-lg-4 bg-gray">
+    <section id="{{ $name }}" class="{{ $name }}-section py-2 py-lg-4">
         <div class="container">
             <div class="row justify-content-center align-items-center gap-2">
                 @if ($page->images->count())
