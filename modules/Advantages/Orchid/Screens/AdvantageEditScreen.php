@@ -100,7 +100,7 @@ class AdvantageEditScreen extends ModulesScreen
 
                     Upload::make('model.attachment')
                         ->groups('image_advantage')
-                        ->acceptedFiles("image/*")
+                        ->acceptedFiles("image/*,video/mp4")
                         ->resizeWidth(1280)
                         ->resizeHeight(1280)
                         ->set('data-upload-compress', "1")

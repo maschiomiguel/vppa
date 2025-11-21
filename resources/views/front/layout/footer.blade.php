@@ -1,5 +1,5 @@
 @inject('contact', 'Modules\\Contact\\Services\\ContactService')
-
+<?php /*
 <footer id="footer" class="overflow-hidden">
     <div class="bg-light py-3">
         <div class="container">
@@ -97,6 +97,7 @@
         </div>
     </div>
 </footer>
+*/ ?>
 
 {{-- Whatsapp fixed button --}}
 {{-- <x-whatsapp-fixed /> --}}

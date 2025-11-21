@@ -8,7 +8,7 @@
         
         <x-modules-galleries::gallery :page="$page" />
 
-        <x-modules-videos::video :page="$page" />
+        {{-- <x-modules-videos::video :page="$page" /> --}}
 
         <x-modules-advantages::advantages :page="$page" />
         

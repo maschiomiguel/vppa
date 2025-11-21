@@ -109,15 +109,15 @@ class PageContactEditScreen extends ModulesScreen
                     Matrix::make("model.$locale.social_networks")
                         ->columns([
                             'Facebook Link' => 'facebook',
-                            'Facebook Username' => 'facebook_username',
+                            // 'Facebook Username' => 'facebook_username',
                             'Twitter' => 'twitter',
-                            'Twitter Username' => 'twitter_username',
+                            // 'Twitter Username' => 'twitter_username',
                             'Instagram' => 'instagram',
-                            'Instagram Username' => 'instagram_username',
+                            // 'Instagram Username' => 'instagram_username',
                             'Linkedin' => 'linkedin',
-                            'Linkedin Username' => 'linkedin_username',
+                            // 'Linkedin Username' => 'linkedin_username',
                             'Youtube' => 'youtube',
-                            'Youtube Username' => 'youtube_username',
+                            // 'Youtube Username' => 'youtube_username',
                         ])
                         ->value($this->model->translate($locale)?->social_networks ?: [[]])
                         ->maxRows(1)

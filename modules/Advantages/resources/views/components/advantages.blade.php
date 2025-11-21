@@ -11,19 +11,31 @@
             <div class="row g-4 justify-content-center">
                 @foreach ($advantages as $index => $advantage)
                     <div class="col-lg-4 col-md-6">
-                        <div class="advantage-card card h-100 border-0 shadow-sm" style="background-color: {{ $advantage->color_code ?? '#e3f2fd' }};">
-                            <div class="card-body p-4">
+                        <div class="advantage-card card h-100 border-0 shadow-sm" style="background-color: {{ $advantage->color_code ? $advantage->color_code . 'CC' : 'rgba(227, 242, 253, 0.8)' }};">
+                            <div class="card-body p-2">
                                 @if ($advantage->image->count())
+                                    @php
+                                        $media = $advantage->image->first();
+                                        $mediaUrl = $media->url();
+                                        $isVideo = str_ends_with(strtolower($mediaUrl), '.mp4');
+                                    @endphp
                                     <div class="advantage-image-wrapper d-flex justify-content-center mb-4">
-                                        <div class="advantage-image-container bg-white d-flex align-items-center justify-content-center p-3">
-                                            <img src="{{ $advantage->image->first()->url() }}" 
-                                                 alt="{{ $advantage->title_1 }}" 
-                                                 title="{{ $advantage->title_1 }}"
-                                                 class="advantage-image">
+                                        <div class="advantage-image-container bg-white d-flex align-items-center justify-content-center">
+                                            @if ($isVideo)
+                                                <video class="advantage-video" autoplay loop muted playsinline>
+                                                    <source src="{{ $mediaUrl }}" type="video/mp4">
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                            @else
+                                                <img src="{{ $mediaUrl }}" 
+                                                     alt="{{ $advantage->title_1 }}" 
+                                                     title="{{ $advantage->title_1 }}"
+                                                     class="advantage-image">
+                                            @endif
                                         </div>
                                     </div>
                                 @endif
-                                <h4 class="advantage-card-title fw-bold mb-3">{{ $advantage->name }}</h4>
+                            <h4 class="advantage-card-title fw-bold mb-3">{{ $advantage->name }}</h4>
                                 <div class="advantage-card-text text-muted mb-3">{!! $advantage->text_1 !!}</div>
                             </div>
                         </div>
