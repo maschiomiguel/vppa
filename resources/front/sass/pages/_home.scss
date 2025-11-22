@@ -17,8 +17,16 @@ body main {
     overflow-x: hidden;
 }
 
+.first-section-wrapper {
+    background: linear-gradient(0deg, #ffa6a6, white);
+}
+
+.second-section-wrapper {
+    background: linear-gradient(0deg, white, #ffa6a6);
+}
+
 .page-sections-wrapper {
-    background: linear-gradient(0deg, #D9D9D9, white);
+    background: linear-gradient(0deg, #ffa6a6, white);
 }
 
 @import "sections/banners";

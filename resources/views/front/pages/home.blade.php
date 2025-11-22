@@ -4,19 +4,26 @@
     <main id="homepage">
         <h1 class="visually-hidden">{{ config('app.name') }}</h1>
 
-        <x-hero-section :page="$page" />
+        <div class="first-section-wrapper">
 
-        <x-separator-primary bg="#D9D9D9" />
+            <x-hero-section :page="$page" />
 
-        <x-modules-galleries::gallery :page="$page" />
+            <x-separator-primary bg="#fde5e5" />
 
-        <x-modules-videos::video :page="$page" />
+            <x-modules-galleries::gallery :page="$page" />
 
-        <x-separator-secondary />
+            <x-modules-videos::video :page="$page" />
 
-        <x-modules-advantages::advantages :page="$page" />
+            <x-separator-secondary />
 
-        <x-separator-primary />
+        </div>
+        <div class="second-section-wrapper">
+            <x-modules-advantages::advantages :page="$page" />
+
+            <x-modules-testimonials::testimonials :page="$page" />
+
+            <x-separator-primary />
+        </div>
 
         <div class="page-sections-wrapper">
             <x-modules-differentials::differentials :page="$page" />
@@ -27,8 +34,6 @@
         </div>
 
         <x-cta-section :page="$page" />
-
-        <x-modules-testimonials::testimonials name="testimonials" :page="$page" />
 
     </main>
 @endsection

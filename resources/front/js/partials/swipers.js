@@ -271,74 +271,90 @@ new Swiper(".swiper-brands", {
 });
 
 // Conta quantos slides de depoimentos existem
-const testimonialSlidesCount = document.querySelectorAll(".swiper-testimonials .swiper-slide").length;
+// const testimonialSlidesCount = document.querySelectorAll(".swiper-testimonials .swiper-slide").length;
 
-const testimonialSwiper = new Swiper(".swiper-testimonials", {
-    rewind: true,
+// const testimonialSwiper = new Swiper(".swiper-testimonials", {
+//     rewind: true,
+//     slidesPerView: 1,
+//     spaceBetween: 20,
+//     centeredSlides: testimonialSlidesCount >= 3, // Só centraliza se tiver 3 ou mais
+//     centerInsufficientSlides: true,
+//     initialSlide: 0, 
+//     navigation: {
+//         nextEl: ".swiper-testimonials .swiper-button-next",
+//         prevEl: ".swiper-testimonials .swiper-button-prev",
+//     },
+//     pagination: {
+//         el: ".swiper-testimonials .swiper-pagination",
+//         type: "bullets",
+//         dynamicBullets: true,
+//         clickable: true,
+//     },
+//     breakpoints: {
+//         992: {
+//             slidesPerView: testimonialSlidesCount >= 3 ? 3 : testimonialSlidesCount,
+//             spaceBetween: testimonialSlidesCount >= 3 ? 0 : 40,
+//             centeredSlides: testimonialSlidesCount >= 3,
+//             initialSlide: testimonialSlidesCount >= 3 ? 1 : 0, // Só começa no meio se tiver 3+
+//         },
+//         1200: {
+//             slidesPerView: testimonialSlidesCount >= 3 ? 3 : testimonialSlidesCount,
+//             spaceBetween: testimonialSlidesCount >= 3 ? 0 : 40,
+//             centeredSlides: testimonialSlidesCount >= 3,
+//             initialSlide: testimonialSlidesCount >= 3 ? 1 : 0, // Só começa no meio se tiver 3+
+//         },
+//     },
+// });
+
+// $(".swiper-testimonials .video").on("click", function () {
+//     testimonialSwiper.autoplay.stop();
+// });
+
+// new Swiper(".swiper-differentials", {
+//     autoplay: {
+//         delay: 5000,
+//         disableOnInteraction: false,
+//     },
+//     rewind: true,
+//     slidesPerView: 1,
+//     spaceBetween: 15,
+//     centerInsufficientSlides: true,
+//     navigation: {
+//         nextEl: ".swiper-differentials .swiper-button-next",
+//         prevEl: ".swiper-differentials .swiper-button-prev",
+//     },
+//     pagination: {
+//         el: ".swiper-differentials .swiper-pagination",
+//         type: "bullets",
+//         dynamicBullets: true,
+//         clickable: true,
+//     },
+//     breakpoints: {
+//         767: {
+//             slidesPerView: 2,
+//         },
+//         992: {
+//             slidesPerView: 3,
+//         },
+//         1200: {
+//             slidesPerView: 4,
+//             spaceBetween: 20,
+//         },
+//     },
+// });
+
+new Swiper(".swiper-testimonials-new", {
+    loop: true,
     slidesPerView: 1,
     spaceBetween: 20,
-    centeredSlides: testimonialSlidesCount >= 3, // Só centraliza se tiver 3 ou mais
-    centerInsufficientSlides: true,
-    initialSlide: 0, 
     navigation: {
-        nextEl: ".swiper-testimonials .swiper-button-next",
-        prevEl: ".swiper-testimonials .swiper-button-prev",
-    },
-    pagination: {
-        el: ".swiper-testimonials .swiper-pagination",
-        type: "bullets",
-        dynamicBullets: true,
-        clickable: true,
+        nextEl: ".swiper-button-next-custom",
+        prevEl: ".swiper-button-prev-custom",
     },
     breakpoints: {
-        992: {
-            slidesPerView: testimonialSlidesCount >= 3 ? 3 : testimonialSlidesCount,
-            spaceBetween: testimonialSlidesCount >= 3 ? 0 : 40,
-            centeredSlides: testimonialSlidesCount >= 3,
-            initialSlide: testimonialSlidesCount >= 3 ? 1 : 0, // Só começa no meio se tiver 3+
-        },
-        1200: {
-            slidesPerView: testimonialSlidesCount >= 3 ? 3 : testimonialSlidesCount,
-            spaceBetween: testimonialSlidesCount >= 3 ? 0 : 40,
-            centeredSlides: testimonialSlidesCount >= 3,
-            initialSlide: testimonialSlidesCount >= 3 ? 1 : 0, // Só começa no meio se tiver 3+
-        },
-    },
-});
-
-$(".swiper-testimonials .video").on("click", function () {
-    testimonialSwiper.autoplay.stop();
-});
-
-new Swiper(".swiper-differentials", {
-    autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-    },
-    rewind: true,
-    slidesPerView: 1,
-    spaceBetween: 15,
-    centerInsufficientSlides: true,
-    navigation: {
-        nextEl: ".swiper-differentials .swiper-button-next",
-        prevEl: ".swiper-differentials .swiper-button-prev",
-    },
-    pagination: {
-        el: ".swiper-differentials .swiper-pagination",
-        type: "bullets",
-        dynamicBullets: true,
-        clickable: true,
-    },
-    breakpoints: {
-        767: {
+        768: {
             slidesPerView: 2,
-        },
-        992: {
-            slidesPerView: 3,
-        },
-        1200: {
-            slidesPerView: 4,
-            spaceBetween: 20,
+            spaceBetween: 30,
         },
     },
 });

@@ -120,6 +120,13 @@ class TestimonyEditScreen extends ModulesScreen
                         ->value($this->model->translate($locale)?->text_3)
                         ->rows(7),
 
+                    TextArea::make("model.$locale.text_4")
+                        ->type('text')
+                        ->title('Resultado')
+                        ->placeholder('Resultado')
+                        ->value($this->model->translate($locale)?->text_4)
+                        ->rows(7),
+
                     // Input::make("model.$locale.link_1")
                     // ->type('text')
                     // ->title('Link do vídeo')

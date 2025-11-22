@@ -11,8 +11,8 @@
             <div class="row g-4 justify-content-center">
                 @foreach ($advantages as $index => $advantage)
                     <div class="col-xl-5 col-xxl-4 col-md-6">
-                        <div class="advantage-card card h-100 border-0 shadow-sm animate-on-scroll" data-animation="fade-up" data-delay="{{ ($index + 1) * 100 }}" style="background-color: {{ $advantage->color_code ? $advantage->color_code . 'CC' : 'rgba(227, 242, 253, 0.8)' }};">
-                            <div class="card-body p-4">
+                        <div class="advantage-card card h-100 border-0 shadow-sm animate-on-scroll" data-animation="fade-in" data-delay="{{ ($index + 1) * 100 }}" style="background-color: {{ $advantage->color_code ? $advantage->color_code . 'CC' : 'rgba(227, 242, 253, 0.8)' }};">
+                            <div class="card-body p-2">
                                 @if ($advantage->image->count())
                                     @php
                                         $media = $advantage->image->first();
